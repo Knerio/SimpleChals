@@ -1,0 +1,15 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended"
+  ],
+  "hostRules": [
+    {
+      "matchHost": "https://maven.pkg.github.com",
+      "username": "Knerio",
+      "encrypted": {
+        "password": "wcFMA/xDdHCJBTolAQ/+NsWj7EyPII9uD5WLWu1ep+mbFSN3hXgX1LHvN4TW1qN4zUBRVFxRN2sqFNWko9MsvVVPXI5t1RCRHeqOzRceC/304lvLMTYla8QbSH1wLxQrpHKYcOsReda915tuaUfIEoWL9ObmrZ7cq6xMHbbXOU5FCnoFmEVDM7bfjowWV5F/heN+pHz6AbGPwCxkK7G+6glYf7bGpC2fgPWITNPGdqlm0vw9A6aTepWq3E9vL44hKMrknFQxhjpwPx0aVcxh68mpAem5XOciZ9ZO5RWYOmqvrcZb2/PALqIiQcIfWkL+D8EtA5paeJO5YCCXTSRLKVmmxE9VKTseDMBpEZoNmLcWY6omkK+/v5xocKbPzt/lb9ucuVeP/3dL3NF8jTPB0zdHWzyBq21y/4vbLXChX5za0MTTpbUV1cv6WaUcZuJtPYHFiHgwzzxc690gvj1nmeGyeH7ZIlHEYbf6hgmYMP2LYNRNDUkksm6pNASKFolsW/XznMIH+NKVhj+gyot4C9aUuniNtOtHO7pxxDK1OzIBY2G94uwbnso9DATknu2WdmKFNSBtYEAiq6HhW/s5aD3hQrYmuxD0K7u3n7oOC4Oo0rsilNoHsWztlYR82UeA0Gq0QL3GBdpVNy9uQmKEsPdvfApq6iYhQcueob2lRFvgMldP4MXXsMzZfWEJLv3SdQGZBcO3FBFy9qUroLdU7c9S3gdU8NHlepjObrKzcvOVWELOy4Paw1BmGPWoLswN2d66tZmFmzITFz1dkx4JgEQxgXC4DLFTsK1Zm6pl+OTAmxXZG2GcVuuiyVZyZQN6N3KBxzRV1k1Qv0da3VflmAq9z7Y28Q"
+      }
+    }
+  ]
+}
