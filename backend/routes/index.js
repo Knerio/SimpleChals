@@ -4,17 +4,17 @@ const {Readable} = require("stream")
 require('dotenv').config();
 
 router.get("/wrapper/latest", async (req, res) => {
-    const packagesURL = `https://api.github.com/users/Knerio/packages/maven/de.derioo.chals.api/versions`;
+    const packagesURL = `${process.env.BASE_GITHUB_URL}/${process.env.GITHUB_USERNAME}/packages/maven/${process.env.API_PACKAGE_PATH}/versions`;
 
-    await downloadLatestJar(packagesURL, "api", "de.derioo.chals", res);
+    await downloadLatestJar(packagesURL, process.env.API_NAME, process.env.API_PACKAGE_PATH, res);
 })
 
 router.get('/latest/:name', async (req, res) => {
     const name = req.params.name;
 
-    const packagesURL = `https://api.github.com/users/Knerio/packages/maven/de.derioo.mods.${name}/versions`;
+    const packagesURL = `${process.env.BASE_GITHUB_URL}/${process.env.GITHUB_USERNAME}/packages/maven/${process.env.MODS_PACKAGE_PREFIX}.${name}/versions`;
 
-    await downloadLatestJar(packagesURL, name, "de.derioo.mods", res);
+    await downloadLatestJar(packagesURL, name, process.env.MODS_PACKAGE_PREFIX, res);
 
 });
 
@@ -39,7 +39,7 @@ async function downloadLatestJar(packagesURL, name, path, res) {
     }, {"updated_at": 0});
 
     console.log(latestPackage.name)
-    const latestJarURL = `https://maven.pkg.github.com/Knerio/SimpleChals/${path}.${name}/${latestPackage.name}/${name}-${latestPackage.name}.jar`
+    const latestJarURL = `${process.env.BASE_MAVEN_URL}/${process.env.GITHUB_USERNAME}/${process.env.GITHUB_PROJECT_NAME}/${path}.${name}/${latestPackage.name}/${name}-${latestPackage.name}.jar`
 
     const jarResponse = await fetch(latestJarURL, {
         method: 'GET',
@@ -58,7 +58,7 @@ async function downloadLatestJar(packagesURL, name, path, res) {
 router.get('/mods', async (req, res) => {
     try {
 
-        const response = await fetch(`https://api.github.com/users/Knerio/packages?package_type=maven`, {
+        const response = await fetch(`${process.env.BASE_GITHUB_URL}/${process.env.GITHUB_USERNAME}/packages?package_type=maven`, {
             headers: {
                 'Authorization': 'Bearer ' + process.env.GITHUB_TOKEN,
             }
@@ -75,8 +75,8 @@ router.get('/mods', async (req, res) => {
 
         for (let i = 0; i < data.length; i++) {
             const name = data[i].name;
-            if (!name.startsWith("de.derioo.mods.")) continue;
-            jsonResponse.push(name.replace("de.derioo.mods.", ""))
+            if (!name.startsWith(`${process.env.MODS_PACKAGE_PREFIX}.`)) continue;
+            jsonResponse.push(name.replace(`${process.env.MODS_PACKAGE_PREFIX}.`, ""))
         }
 
         res.json(jsonResponse);
