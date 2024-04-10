@@ -39,7 +39,7 @@ async function downloadLatestJar(packagesURL, name, path, res) {
     }, {"updated_at": 0});
 
     console.log(latestPackage.name)
-    const latestJarURL = `https://maven.pkg.github.com/Knerio/Simple-Chals-Server/${path}.${name}/${latestPackage.name}/${name}-${latestPackage.name}.jar`
+    const latestJarURL = `https://maven.pkg.github.com/Knerio/SimpleChals/${path}.${name}/${latestPackage.name}/${name}-${latestPackage.name}.jar`
 
     const jarResponse = await fetch(latestJarURL, {
         method: 'GET',

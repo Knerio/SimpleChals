@@ -8,9 +8,9 @@ plugins {
     id("maven-publish")
 }
 
-group = "de.derioo.chals.timer"
+group = "de.derioo.chals.randomizer"
 version = "0.0.0"
-description = "Dies ist eine TimerMod, diese Mod nutzt den Befehl <green>'/timer start | stop | reset'</green> und ist standarmäßig aktiviert"
+description = "Diese Mod ist beim Starten sofort aktiv und verwandelt alle abgebauten Blöcke oder Kisteninhalt zu zufälligen items"
 
 java {
     toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -18,7 +18,7 @@ java {
 
 repositories {
     mavenCentral()
-    maven("https://maven.pkg.github.com/Knerio/SimpleChals") {
+    maven("https://maven.pkg.github.com/Knerio/Simple-Chals-Server") {
         credentials {
             username = project.properties["GITHUB_USERNAME"].toString()
             password = project.properties["GITHUB_TOKEN"].toString()
@@ -28,9 +28,9 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
-    compileOnly("de.derioo.chals:api:0.0.6")
-    compileOnly("org.projectlombok:lombok:1.18.30")
-    annotationProcessor("org.projectlombok:lombok:1.18.30")
+    compileOnly("de.derioo.chals:api:0.1.1")
+    compileOnly("org.projectlombok:lombok:1.18.32")
+    annotationProcessor("org.projectlombok:lombok:1.18.32")
 }
 
 tasks {
@@ -49,7 +49,7 @@ tasks {
 
 
     reobfJar {
-        outputJar = layout.buildDirectory.file("libs/Timer.jar")
+        outputJar = layout.buildDirectory.file("libs/Randomizer.jar")
     }
 
     publish {
@@ -63,7 +63,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Knerio/SimpleChals")
+            url = uri("https://maven.pkg.github.com/Knerio/Simple-Chals-Server")
             credentials {
                 username = project.properties["GITHUB_USERNAME"].toString()
                 password = project.properties["GITHUB_TOKEN"].toString()
@@ -73,17 +73,17 @@ publishing {
     publications {
         register<MavenPublication>("gpr") {
             groupId = "de.derioo.mods"
-            artifactId = "timer"
-            version = "0.0.0"
+            artifactId = "randomizer"
+            version = "0.1.2"
             from(components["java"])
-            artifact("build/libs/Timer.jar")
+            artifact("build/libs/Randomizer.jar")
         }
     }
 }
 
 
 bukkitPluginYaml {
-    main = "de.derioo.chals.timer.Timer"
+    main = "de.derioo.chals.randomizer.Randomizer"
     load = BukkitPluginYaml.PluginLoadOrder.STARTUP
     authors.add("Dario")
     depend.add("simpleChalsServer")

@@ -68,7 +68,7 @@ publishing {
   repositories {
     maven {
       name = "GitHubPackages"
-      url = uri("https://maven.pkg.github.com/Knerio/Simple-Chals-Server")
+      url = uri("https://maven.pkg.github.com/Knerio/SimpleChals")
       credentials {
         username = project.properties["GITHUB_USERNAME"].toString()
         password = project.properties["GITHUB_TOKEN"].toString()
