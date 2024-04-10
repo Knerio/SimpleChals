@@ -18,7 +18,7 @@ java {
 
 repositories {
     mavenCentral()
-    maven("https://maven.pkg.github.com/Knerio/Simple-Chals-Server") {
+    maven("https://maven.pkg.github.com/Knerio/SimpleChals") {
         credentials {
             username = project.properties["GITHUB_USERNAME"].toString()
             password = project.properties["GITHUB_TOKEN"].toString()
@@ -28,7 +28,7 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
-    compileOnly("de.derioo.chals:api:0.1.1")
+    compileOnly("de.derioo.chals:api:0.1.17")
     compileOnly("org.projectlombok:lombok:1.18.32")
     annotationProcessor("org.projectlombok:lombok:1.18.32")
 }
@@ -63,7 +63,7 @@ publishing {
     repositories {
         maven {
             name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/Knerio/Simple-Chals-Server")
+            url = uri("https://maven.pkg.github.com/Knerio/SimpleChals")
             credentials {
                 username = project.properties["GITHUB_USERNAME"].toString()
                 password = project.properties["GITHUB_TOKEN"].toString()
@@ -74,7 +74,7 @@ publishing {
         register<MavenPublication>("gpr") {
             groupId = "de.derioo.mods"
             artifactId = "randomizer"
-            version = "0.1.2"
+            version = "0.0.0"
             from(components["java"])
             artifact("build/libs/Randomizer.jar")
         }
