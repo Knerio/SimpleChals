@@ -93,6 +93,6 @@ bukkitPluginYaml {
   main = "de.derioo.chals.ampel.Ampel"
   load = BukkitPluginYaml.PluginLoadOrder.STARTUP
   authors.add("Dario")
-  depend.add("simpleChalsServer")
+  depend.add("SC-Server")
   apiVersion = "1.20"
 }

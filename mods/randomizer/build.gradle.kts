@@ -94,6 +94,6 @@ bukkitPluginYaml {
     main = "de.derioo.chals.randomizer.Randomizer"
     load = BukkitPluginYaml.PluginLoadOrder.STARTUP
     authors.add("Dario")
-    depend.add("simpleChalsServer")
+    depend.add("SC-Server")
     apiVersion = "1.20"
 }

@@ -94,6 +94,6 @@ bukkitPluginYaml {
   main = "de.derioo.chals.timer.Timer"
   load = BukkitPluginYaml.PluginLoadOrder.STARTUP
   authors.add("Dario")
-  depend.add("simpleChalsServer")
+  depend.add("SC-Server")
   apiVersion = "1.20"
 }
