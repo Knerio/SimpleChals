@@ -1,5 +1,6 @@
 import xyz.jpenilla.resourcefactory.bukkit.BukkitPluginYaml
 import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
+import java.util.*
 
 
 plugins {
@@ -63,6 +64,13 @@ tasks {
 }
 
 
+fun ver(): String {
+  val rootProjectDir = file("..")
+  val gradlePropertiesFile = rootProjectDir.resolve("gradle.properties")
+  val gradleProperties = Properties()
+  gradleProperties.load(gradlePropertiesFile.inputStream())
+  return gradleProperties["VERSION"].toString();
+}
 
 publishing {
   repositories {
@@ -79,7 +87,7 @@ publishing {
     register<MavenPublication>("gpr") {
       groupId = "de.derioo.chals"
       artifactId = "api"
-      version = "0.1.17"
+      version = ver()
       from(components["java"])
       artifact("build/libs/SCS.jar")
     }

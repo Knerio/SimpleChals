@@ -1,4 +1,5 @@
 import xyz.jpenilla.resourcefactory.bukkit.BukkitPluginYaml
+import java.util.*
 
 plugins {
   `java-library`
@@ -57,6 +58,13 @@ tasks {
 
 }
 
+fun ver(): String {
+  val rootProjectDir = file("../..")
+  val gradlePropertiesFile = rootProjectDir.resolve("gradle.properties")
+  val gradleProperties = Properties()
+  gradleProperties.load(gradlePropertiesFile.inputStream())
+  return gradleProperties["VERSION"].toString();
+}
 
 publishing {
   repositories {
@@ -73,7 +81,7 @@ publishing {
     register<MavenPublication>("gpr") {
       groupId = "de.derioo.mods"
       artifactId = "ampel"
-      version = "0.0.0"
+      version = ver()
       from(components["java"])
       artifact("build/libs/Ampel.jar")
     }
