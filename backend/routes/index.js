@@ -1,7 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const {Readable} = require("stream")
-require('dotenv').config();
+const dotenv = require('dotenv');
+
+dotenv.config();
 
 router.get("/wrapper/latest", async (req, res) => {
     const packagesURL = `${process.env.BASE_GITHUB_URL}/${process.env.GITHUB_USERNAME}/packages/maven/${process.env.API_PACKAGE_PATH}/versions`;
