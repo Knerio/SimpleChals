@@ -2,6 +2,7 @@ package de.derioo.chals.server.api;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import com.google.gson.JsonSyntaxException;
 import org.apache.commons.io.IOUtils;
 import org.bukkit.plugin.Plugin;
 
@@ -10,7 +11,7 @@ import java.nio.charset.StandardCharsets;
 
 public class Config {
 
-  private final JsonObject content;
+  private JsonObject content;
   private final Plugin plugin;
   private final String name;
 
@@ -25,6 +26,9 @@ public class Config {
       } else {
         try (FileReader fileReader = new FileReader(configFile);) {
           content = JsonParser.parseString(IOUtils.toString(fileReader)).getAsJsonObject();
+        } catch (JsonSyntaxException e) {
+          System.out.println("Found invalid json");
+          content = getDefault();
         }
       }
     } catch (IOException e) {

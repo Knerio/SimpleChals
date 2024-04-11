@@ -84,7 +84,7 @@ public class Mod {
   public void download() {
     File downloadDir = getDownloadDir();
     try {
-      String serverUrl = "http://127.0.0.1:3000/latest/" + this.name;
+      String serverUrl = "http://localhost:3000/latest/" + this.name;
 
       HttpURLConnection connection = (HttpURLConnection) new URL(serverUrl).openConnection();
       connection.connect();
