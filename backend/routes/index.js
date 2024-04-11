@@ -25,7 +25,7 @@ router.get('/latest/:name', async (req, res) => {
 async function downloadLatestJar(packagesURL, name, path, res) {
     const response = await fetch(packagesURL, {
         headers: {
-            'Authorization': 'Bearer ' + process.env.GITHUB_TOKEN,
+            'Authorization': 'Bearer ' + process.env.GITHUB_PASSWORD,
         }
     });
 
@@ -49,7 +49,7 @@ async function downloadLatestJar(packagesURL, name, path, res) {
         method: 'GET',
         responseType: 'blob',
         headers: {
-            "Authorization": `Bearer ${process.env.GITHUB_TOKEN}`
+            "Authorization": `Bearer ${process.env.GITHUB_PASSWORD}`
         }
     })
 
@@ -64,7 +64,7 @@ router.get('/mods', async (req, res) => {
 
         const response = await fetch(`${process.env.BASE_GITHUB_URL}/${process.env.GITHUB_USERNAME}/packages?package_type=maven`, {
             headers: {
-                'Authorization': 'Bearer ' + process.env.GITHUB_TOKEN,
+                'Authorization': 'Bearer ' + process.env.GITHUB_PASSWORD,
             }
         });
 
