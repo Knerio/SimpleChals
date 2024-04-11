@@ -26,7 +26,7 @@ public class Config {
       } else {
         try (FileReader fileReader = new FileReader(configFile);) {
           content = JsonParser.parseString(IOUtils.toString(fileReader)).getAsJsonObject();
-        } catch (JsonSyntaxException e) {
+        } catch (Exception e) {
           System.out.println("Found invalid json");
           content = getDefault();
         }
