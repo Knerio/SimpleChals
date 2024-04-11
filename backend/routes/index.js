@@ -1,6 +1,7 @@
+import fetch from "node-fetch";
+
 const express = require('express');
 const router = express.Router();
-import fetch from "node-fetch";
 const {Readable} = require("stream")
 const dotenv = require('dotenv');
 
