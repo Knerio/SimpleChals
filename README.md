@@ -1,0 +1,1 @@
+You can auto deploy the backend via the docker-compose file, just add the right environment variable
