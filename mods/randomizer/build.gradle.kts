@@ -29,7 +29,7 @@ repositories {
 
 dependencies {
     paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
-    compileOnly("de.derioo.chals:api:0.1.17")
+    compileOnly("de.derioo.chals:api:0.2.10")
     compileOnly("org.projectlombok:lombok:1.18.32")
     annotationProcessor("org.projectlombok:lombok:1.18.32")
 }
