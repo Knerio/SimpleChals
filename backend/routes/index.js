@@ -56,7 +56,7 @@ async function downloadLatestJar(packagesURL, name, path, res) {
 
     res.setHeader('Content-Disposition', `attachment; filename="${name}.jar"`);
     res.setHeader('Content-Type', 'application/java-archive');
-    Readable.fromWeb(jarResponse.body).pipe(res);
+    jarResponse.body.pipe(res);
 }
 
 router.get('/mods', async (req, res) => {
