@@ -3,7 +3,7 @@ import java.util.*
 
 plugins {
   `java-library`
-  id("io.papermc.paperweight.userdev") version "1.5.15"
+  id("io.papermc.paperweight.userdev") version "1.6.2"
   id("xyz.jpenilla.run-paper") version "2.2.4"
   id("xyz.jpenilla.resource-factory-bukkit-convention") version "1.1.1"
   id("maven-publish")
