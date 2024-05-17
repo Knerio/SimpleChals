@@ -36,7 +36,7 @@ dependencies {
   testCompileOnly("org.projectlombok:lombok:1.18.32")
   testAnnotationProcessor("org.projectlombok:lombok:1.18.32")
 
-  implementation("com.github.stefvanschie.inventoryframework:IF:0.10.13")
+  implementation("com.github.stefvanschie.inventoryframework:IF:0.10.14")
   implementation("de.derioo:inventoryframework:5.0.0")
 
 }
