@@ -31,10 +31,10 @@ repositories {
 dependencies {
   paperweight.paperDevBundle("1.20.4-R0.1-SNAPSHOT")
 
-  compileOnly("org.projectlombok:lombok:1.18.32")
-  annotationProcessor("org.projectlombok:lombok:1.18.32")
-  testCompileOnly("org.projectlombok:lombok:1.18.32")
-  testAnnotationProcessor("org.projectlombok:lombok:1.18.32")
+  compileOnly("org.projectlombok:lombok:1.18.34")
+  annotationProcessor("org.projectlombok:lombok:1.18.34")
+  testCompileOnly("org.projectlombok:lombok:1.18.34")
+  testAnnotationProcessor("org.projectlombok:lombok:1.18.34")
 
   implementation("com.github.stefvanschie.inventoryframework:IF:0.10.14")
   implementation("de.derioo:inventoryframework:5.0.0")
