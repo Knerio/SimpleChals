@@ -6,7 +6,7 @@ import java.util.*
 plugins {
   `java-library`
   id("io.papermc.paperweight.userdev") version "1.7.1"
-  id("xyz.jpenilla.run-paper") version "2.3.0"
+  id("xyz.jpenilla.run-paper") version "2.3.1"
   id("xyz.jpenilla.resource-factory-bukkit-convention") version "1.1.1"
   id("maven-publish")
   id("com.github.johnrengelman.shadow") version "8.1.1"
