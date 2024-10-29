@@ -3,7 +3,7 @@ version: '3.8'
 services:
   backend:
     container_name: backend
-    image: node:20
+    image: node:22
     working_dir: /data
     command: bash -c 'if [ ! -d "scs" ]; then git clone https://github.com/Knerio/SimpleChals scs; fi && cd scs/backend && npm install && npm run start'
 #    environment:
